@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Information</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .tooltip-inner {
+            max-width: 200px;
+            text-align: center;
+        }
+        #successMessage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand">H&A</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="suggestions.html">Suggestions</a></li>
+            <li><a href="updates.html">Updates</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 70px;">
+    <h2>Contact Information</h2>
+
+    <div class="btn-group" role="group" aria-label="Contact Options">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#callModal" title="Click to call administration">
+            Call Administration
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#emailModal" title="Click to email administration">
+            Email Administration
+        </button>
+    </div>
+
+    <div class="modal fade" id="callModal" tabindex="-1" role="dialog" aria-labelledby="callModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="callModalLabel">Call Administration</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Click the button below to call the administration directly.</p>
+                    <a href="tel:+1234567890" class="btn btn-success">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="emailModalLabel">Email Administration</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Click the button below to send an email to the administration.</p>
+                    <a href="mailto:admin@example.com" class="btn btn-primary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 30px;">Send Us a Message</h3>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-info">Send Message</button>
+    </form>
+
+    <div id="successMessage" class="alert alert-success" style="margin-top: 20px;">
+        Your message has been sent successfully!
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#contactForm').on('submit', function(event) {
+            event.preventDefault();
+            $('#successMessage').fadeIn();
+            $(this).trigger("reset"); 
+        });
+    });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
